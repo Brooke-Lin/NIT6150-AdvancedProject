@@ -1,0 +1,166 @@
+/* General body styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Center login page content */
+#loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full screen */
+  /* background-color: #f0f0f0; */
+
+  background-image: url('mobile_banner.webp'); /* replace with your image path */
+  background-size: cover; /* makes the image cover the whole area */
+  background-position: center; /* centers the image */
+  background-repeat: no-repeat;
+  height: 100vh; /* full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginPage h2{
+  color: white;
+}
+
+.login-box {
+  /* background: white; */
+  padding: 30px;
+  border-radius: 12px;
+  /* box-shadow: 0px 4px 12px rgba(0,0,0,0.1); */
+  text-align: center;
+  width: 300px;
+}
+
+/* Logo on login page */
+.login-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-logo img {
+  width: 300px; /* adjust size as needed */
+  height: 100px;
+  object-fit: cover;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 278px;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background: #52B64E;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.login-box button:hover {
+  background: #77DD77;
+}
+
+/* Error message */
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+/* Home Page */
+#homePage {
+  padding: 20px;
+
+  background-image: url('mobile_banner.webp'); /* replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+/* Home page container */
+.home-container {
+  padding: 20px;
+  text-align: center;
+  /* background: #52B64E; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Welcome message */
+#welcomeMsg {
+    font-size: 24px;
+    color: white;;
+    margin-bottom: 20px;
+}
+
+/* Main button */
+.main-btn {
+  background: #52B64E;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+/* Grid menu for 2x2 buttons */
+.grid-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 150px); /* 2 columns */
+    grid-template-rows: repeat(2, 150px);    /* 2 rows */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Grid buttons styling */
+.grid-btn {
+    background: #e6f0ff;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* .grid-btn .icon {
+    font-size: 22px;
+    color: #007bff;
+    margin-bottom: 8px;
+} */
+
+.grid-btn:hover {
+    background: white;
+}
+
+.main-btn:hover {
+  background: #77DD77;
+}
+
+
