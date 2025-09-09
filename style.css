@@ -1,166 +1,404 @@
-/* General body styling */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #033530;
+  overflow: hidden;
 }
 
-/* Center login page content */
 #loginPage {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh; /* full screen */
-  /* background-color: #f0f0f0; */
-
-  background-image: url('mobile_banner.webp'); /* replace with your image path */
-  background-size: cover; /* makes the image cover the whole area */
-  background-position: center; /* centers the image */
-  background-repeat: no-repeat;
-  height: 100vh; /* full viewport height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#loginPage h2{
-  color: white;
+  height: 100dvh;
+  padding: 0 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #033530;
 }
 
 .login-box {
-  /* background: white; */
-  padding: 30px;
-  border-radius: 12px;
-  /* box-shadow: 0px 4px 12px rgba(0,0,0,0.1); */
-  text-align: center;
-  width: 300px;
+  flex: 0 0 40%; /* middle 40% */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Logo on login page */
+.login-footer {
+  flex: 0 0 15%; /* bottom 15% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
 .login-logo {
-  text-align: center;
-  margin-bottom: 20px;
+  flex: 0 0 30%; /* 30% of screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-logo img {
-  width: 300px; /* adjust size as needed */
-  height: 100px;
-  object-fit: cover;
+  max-height: 100%;
+  max-width: 80%;
+  object-fit: contain;
 }
 
-.login-box h2 {
-  margin-bottom: 20px;
+.logo-green {
+  color: #52B64E;
+  font-size: 2.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 8px 24px;
+  -webkit-text-stroke: 2px #222; 
+  text-stroke: 2px #222;  
+}
+
+.logo-black {
+  color: #FFFFF9;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
 .login-box input {
-  width: 278px;
-  padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  width: 90%;
+  display: block;
+  margin-bottom: 16px;
+  padding: 14px;
+  border: 1px solid #52B64E;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f6fff5;
+  transition: all 0.3s;
+}
+
+.login-box input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(82,182,78,0.2);
 }
 
 .login-box button {
-  width: 100%;
-  padding: 10px;
-  background: #52B64E;
+  width: 60%;
+  display: block;
+  margin-bottom: 16px;
+  padding: 14px;
+  background: #0a7a64;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(82,182,78,0.2);
+  transition: all 0.2s;
 }
 
 .login-box button:hover {
-  background: #77DD77;
+  background: #065c4e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(82,182,78,0.3);
+}
+
+.login-box button:active {
+  transform: translateY(0);
 }
 
 /* Error message */
 .error {
-  color: red;
+  color: #ff3b3b;
   margin-top: 10px;
+  font-size: 15px;
+  min-height: 20px;
 }
-
-
-
-
-
 
 /* Home Page */
 #homePage {
-  padding: 20px;
-
-  background-image: url('mobile_banner.webp'); /* replace with your image path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 0;
   min-height: 100vh;
 }
 
-/* Home page container */
 .home-container {
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   text-align: center;
-  /* background: #52B64E; */
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100dvh;
+  box-sizing: border-box;
 }
 
-/* Welcome message */
+.page-title {
+  margin-top: 23px;
+  text-align: center;
+  color: white;
+}
+
+#notesPage h2{
+  margin-left: 30px;
+}
+
+#bookPage h2{
+  margin-left: 30px;
+}
+
+#inboxPage h2{
+  margin-right: -10px;
+}
+
+#profilePage h2{
+  margin-right: 20px;
+}
+
+.centered-container {
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 #welcomeMsg {
-    font-size: 24px;
-    color: white;;
-    margin-bottom: 20px;
+  font-size: 26px;
+  color: white;
+  margin: 0 20px 30px 20px;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(82,182,78,0.18);
+}
+
+/* Book a Lesson */
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #388e3c;
+  font-weight: 500;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1.5px solid #388e3c;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f6fff5;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #27632a;
+  outline: none;
 }
 
 /* Main button */
 .main-btn {
-  background: #52B64E;
+  background: #0a7a64;
   color: white;
   border: none;
-  border-radius: 12px;
-  padding: 15px 30px;
+  border-radius: 14px;
+  padding: 8px 24px;
   font-size: 20px;
   cursor: pointer;
-  margin-bottom: 30px;
-}
-
-/* Grid menu for 2x2 buttons */
-.grid-menu {
-    display: grid;
-    grid-template-columns: repeat(2, 150px); /* 2 columns */
-    grid-template-rows: repeat(2, 150px);    /* 2 rows */
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-/* Grid buttons styling */
-.grid-btn {
-    background: #e6f0ff;
-    border-radius: 12px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* .grid-btn .icon {
-    font-size: 22px;
-    color: #007bff;
-    margin-bottom: 8px;
-} */
-
-.grid-btn:hover {
-    background: white;
+  margin: 30px auto 30px auto;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(82,182,78,0.12);
+  transition: background 0.2s;
 }
 
 .main-btn:hover {
-  background: #77DD77;
+  background: #065c4e;
+}
+
+/* Grid menu for 2x2 button in the home page */
+.grid-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: repeat(2, 70px);
+  gap: 18px;
+  margin-bottom: 36px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.grid-btn {
+  width: 140px;
+  height: 100px;
+  background: #eafbe7;
+  border-radius: 16px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(82,182,78,0.10);
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #52B64E;
+  transition: background 0.2s, border 0.2s;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.grid-btn p{
+  margin: 0;
+  font-size: 14px;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.grid-btn .icon {
+  font-size: 28px;
+  color: #52B64E;
+  margin-bottom: 10px;
+}
+
+.grid-btn:hover {
+  background: #d0f5c7;
+  border: 2px solid #388e3c;
+}
+
+/* Back button */
+.back-btn {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #0a7a64;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 18px 8px 14px;
+  font-size: 18px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(82,182,78,0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.back-btn:hover {
+  background: #388e3c;
+}
+
+/* List styling for lessons, notes, inbox */
+#lessonsList li,
+#notesList li,
+#inboxList li {
+  background: #eafbe7;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(82,182,78,0.07);
+  font-size: 16px;
+  text-align: left;
+}
+
+#lessonsList button {
+  background: #52B64E;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  margin-left: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+
+#lessonsList button:hover {
+  background: #388e3c;
+}
+
+#profileDetails {
+  width: 100%;
+  text-align: left; 
+}
+
+/* My profile */
+#profileDetails p {
+  background: #eafbe7;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #388e3c;
+  box-shadow: 0 1px 4px rgba(82,182,78,0.07);
+  text-align: left;
+}
+
+
+@media (max-width: 600px) {
+  .login-box, .home-container {
+    padding: 0vw 4vw;
+  }
+  .grid-menu {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 120px 120px;
+    gap: 12px;
+  }
+}
+
+/* Trainer Practice Note Card */
+.trainer-note-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(82,182,78,0.10);
+  max-width: 340px;
+  width: 100%;
+  padding: 22px 18px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trainer-note-info {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #388e3c;
+  width: 100%;
+  text-align: left;
+}
+
+.trainer-note-textarea {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1.5px solid #388e3c;
+  font-size: 15px;
+  padding: 10px;
+  background: #f6fff5;
+  resize: vertical;
+}
+
+.trainer-note-btn {
+  width: 100px;
+  font-size: 15px;
+  align-self: flex-end;
+}
+
+/*Responsive for trainer note card*/
+@media (max-width: 600px) {
+  .trainer-note-card {
+    max-width: 98vw;
+    padding: 16px 6vw;
+  }
+  .trainer-note-textarea {
+    max-width: 90vw;
+  }
+}
+
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 

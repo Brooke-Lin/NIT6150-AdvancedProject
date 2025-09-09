@@ -3,58 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>No Yelling Driving School</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--Login page-->
     <div id="loginPage">
-        <div class="login-box">
-            <div class="login-logo">
-                <img src="driving school logo.png" alt="">
-            </div>
+  
+        <!-- Logo above the box -->
+        <div class="login-logo">
+            <img src="Book2DriveLogo.jpg" alt="" width="250" height="250">
+        </div>
 
-            <h2>Log in</h2>
+        <!-- Login box -->
+        <div class="login-box">
             <input type="text" id="username" placeholder="Username">
             <input type="password" id="password" placeholder="Password">
             <button onclick="login()">Login</button>
             <p id="errorMsg" class="error"></p>
         </div>
-    </div>
 
-    <!-- Home Page -->
-    <div id="homePage" style="display: none;">
-        <div class="home-container">
-            <!--Welcome message-->
-            <h2 id="welcomeMsg">Welcome, User</h2>
-
-            <div class="grid-menu">
-                <div class="menu-item grid-btn">
-                    <span class="icon"></span>
-                    <p>My Lessons</p>
-                </div>
-
-                <div class="menu-item grid-btn">
-                    <span class="icon"></span>
-                    <p>Learning Progress</p>
-                </div>
-
-                <div class="menu-item grid-btn">
-                    <span class="icon"></span>
-                    <p>Notifications</p>
-                </div>
-
-                <div class="menu-item grid-btn">
-                    <span class="icon"></span>
-                    <p>Profile</p>
-                </div>
-            </div>
-
-            <!--Main buttons-->
-            <button class="main-btn">Booke a Lesson</button>
+        <!-- Footer -->
+        <div class="login-footer">
+            <span class="logo-black">Plan.Book.Drive</span>
         </div>
     </div>
 
+     <!-- Home Page -->
+    <div id="homePage" style="display: none;">
+        <div class="home-container centered-container">
+            <h2 id="welcomeMsg">Welcome, User</h2>
+            <div class="grid-menu">
+                <div class="menu-item grid-btn" onclick="showSection('lessons')">
+                    <span class="icon">🗓️</span>
+                    <p>My Lessons</p>
+                </div>
+                <div class="menu-item grid-btn" onclick="showSection('notes')">
+                    <span class="icon">📝</span>
+                    <p>Practice Notes</p>
+                </div>
+                <div class="menu-item grid-btn" onclick="showSection('inbox')" style="position:relative;">
+                    <span class="icon">🔔</span>
+                    <p>Notifications</p>
+                    <span id="unreadCount" style="position:absolute;top:8px;right:18px;background:#ff3b3b;color:white;border-radius:50%;padding:2px 7px;font-size:12px;display:none;"></span>
+                </div>
+                <div class="menu-item grid-btn" onclick="showSection('profile')">
+                    <span class="icon"><img id="profileIcon" src="L plate.png" alt="" width="35" height="40"></span>
+                    <p>My Profile</p>
+                </div>
+            </div>
+            <button class="main-btn" onclick="showSection('book')">Book a Lesson</button>
+        </div>
+    </div>
+
+    <!-- Book a Lesson Page -->
+    <div id="bookPage" style="display:none; position:relative;">
+        <button class="back-btn" onclick="showSection('home')">&#8592; Back</button>
+        <div class="home-container">
+            <h2 class="page-title" style="margin-bottom:24px;">Book a Lesson</h2>
+            <form id="bookForm" onsubmit="submitBooking(event)" style="width:100%; max-width:340px; margin:0 auto;">
+                <label for="lessonDate" class="form-label">Date</label>
+                <input type="date" id="lessonDate" required class="form-input">
+
+                <label for="lessonTime" class="form-label">Time</label>
+                <select id="lessonTime" required class="form-input">
+                    <option value="">Select Time</option>
+                    <option value="08:00">08:00</option>
+                    <option value="08:30">08:30</option>
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                    <option value="17:30">17:30</option>
+                </select>
+
+                <label for="trainer" class="form-label">Preferred Trainer</label>
+                <select id="trainer" required class="form-input">
+                    <option value="">Select Trainer</option>
+                    <option value="Alex">Alex</option>
+                    <option value="Jamie">Jamie</option>
+                    <option value="Taylor">Taylor</option>
+                </select>
+
+                <button class="main-btn" type="submit" style="width:100%; margin-top:18px;">Submit</button>
+            </form>
+            <p id="bookMsg" class="error"></p>
+        </div>
+    </div>
+
+    <!-- My Lessons Page -->
+    <div id="lessonsPage" style="display:none; position:relative;">
+        <button class="back-btn" onclick="showSection('home')">&#8592; Back</button>
+        <div class="home-container">
+            <h2 class="page-title">My Lessons</h2>
+            <ul id="lessonsList"></ul>
+        </div>
+    </div>
+
+    <!-- Practice Notes Page -->
+    <div id="notesPage" style="display:none; position:relative;">
+        <button class="back-btn" onclick="showSection('home')">&#8592; Back</button>
+        <div class="home-container">
+            <h2 class="page-title">Practice Notes</h2>
+            <div id="trainerNotesContainer"></div>
+            <ul id="notesList"></ul>
+        </div>
+    </div>
+
+    <!-- Inbox Page -->
+    <div id="inboxPage" style="display:none; position:relative;">
+        <button class="back-btn" onclick="showSection('home')">&#8592; Back</button>
+        <div class="home-container">
+            <h2 class="page-title">Notifications</h2>
+            <ul id="inboxList"></ul>
+        </div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profilePage" style="display:none; position:relative;">
+        <button class="back-btn" onclick="showSection('home')">&#8592; Back</button>
+        <div class="home-container">
+            <h2 class="page-title">My Profile</h2>
+            <div id="profileDetails"></div>
+            <div style="width:100%; display:flex; justify-content:center;">
+                <button class="main-btn" onclick="logout()" style="margin-top:20px; width:120px; padding:8px 0; font-size:16px;">Log Out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trainer Note Modal -->
+    <div id="noteModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.3); z-index:1000; justify-content:center; align-items:center;">
+        <div style="background:#fff; padding:24px 18px; border-radius:12px; max-width:340px; width:90vw;">
+            <h3>Write Practice Note</h3>
+            <textarea id="trainerNoteText" rows="4" style="width:100%; margin-bottom:16px;"></textarea>
+            <div style="display:flex; justify-content:space-between;">
+                <button class="main-btn" onclick="submitTrainerNote()">Submit</button>
+                <button class="back-btn" onclick="closeNoteModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
