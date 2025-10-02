@@ -27,6 +27,8 @@ could be integrated and provides a visual representation of the proposed solutio
 Note: This prototype is designed specifically for mobile devices. For the best experience, open the demo link in your 
 browser's developer tools and select a device such as iPhone 12 Pro or iPhone 14 Pro Max to preview the mobile layout.
 
+https://brooke-lin.github.io/NIT6150-AdvancedProject/
+
 **Project Motivation**
 -
 No Yelling Driving School needed a more reliable way to deliver notifications to its students. Our project provides a prototype solution,
