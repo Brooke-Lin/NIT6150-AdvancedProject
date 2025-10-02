@@ -25,7 +25,7 @@ could be integrated and provides a visual representation of the proposed solutio
 **Live Demo Link**
 -
 Note: This prototype is designed specifically for mobile devices. For the best experience, open the demo link in your 
-browser's developer tools and select a device such as iPhone 12 or iPhone Pro to preview the mobile layout.
+browser's developer tools and select a device such as iPhone 12 Pro or iPhone 14 Pro Max to preview the mobile layout.
 
 **Project Motivation**
 -
