@@ -16,7 +16,7 @@ could be integrated and provides a visual representation of the proposed solutio
 * Notification System: Designed to showcase how real-time notifications could be delivered to users
 * User Experience Focused: Emphasis on usability and accessibility for both students and instructors
 
-**Technologies Used**
+**Built With**
 -
 * JavaScript
 * HTML
