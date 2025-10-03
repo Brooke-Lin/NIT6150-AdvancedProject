@@ -3,7 +3,7 @@
 
 **Overview**
 -
-This project was developed as part of the Master's degree course. Our group collaborated to identify and address a real-world issue faced by No Yelling Driving School. 
+This project was developed as part of my university coursework. Our group collaborated to identify and address a real-world issue faced by No Yelling Driving School. 
 To better understand the problem, we conducted marketing analysis by reviewing their Google reviews, where we found many students mentioning that their messages were ignored or 
 they did not receive course cancellation notifications.
 
